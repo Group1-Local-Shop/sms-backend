@@ -175,11 +175,13 @@ GEM
     rake (13.0.6)
     reline (0.3.1)
       io-console (~> 0.5)
+
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
     sqlite3 (1.5.3-x86_64-darwin)
-    sqlite3 (1.5.3-x86_64-linux)
+
+   
     thor (1.2.1)
     timeout (0.3.0)
     tzinfo (2.0.5)
