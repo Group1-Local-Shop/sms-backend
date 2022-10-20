@@ -53,5 +53,4 @@ end
 gem "active_model_serializers", "~> 0.10.13"
 gem 'devise'
 gem 'devise-jwt'
-# 'dotenv-rails' is for storing secret key in ENV file
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'fast_jsonapi'
