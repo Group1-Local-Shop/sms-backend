@@ -19,8 +19,64 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_020730) do
     t.integer "quantity_damaged"
     t.integer "checked_in"
     t.integer "checked_out"
+
+ActiveRecord::Schema[7.0].define(version: 2022_10_20_124710) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_10_20_122459) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "sales", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "selling_price"
+    t.integer "product_quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+
+ActiveRecord::Schema[7.0].define(version: 2022_10_20_130730) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.boolean "admin", default: false, null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "jti", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["jti"], name: "index_users_on_jti", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+
+  create_table "suppliers", force: :cascade do |t|
+    t.string "name"
+    t.integer "product_quantity"
+    t.integer "buying_price"
+    t.boolean "payment_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "product_id", null: false
+    t.index ["product_id"], name: "index_suppliers_on_product_id"
+  end
+
+  add_foreign_key "suppliers", "products"
 
 end

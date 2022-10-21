@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :stock_takes, only: [:index, :show, :create, :update, :destroy]
   get 'private/test'
   devise_for :users,path:"",path_names: {
     sign_in: 'login',
