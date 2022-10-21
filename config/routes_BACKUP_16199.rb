@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :stock_takes, only: [:index, :show, :create, :update, :destroy]
-=======
   get 'private/test'
   devise_for :users,path:"",path_names: {
     sign_in: 'login',
@@ -20,7 +18,6 @@ Rails.application.routes.draw do
 
   resources :products
 
->>>>>>> e707c7f49290e40b61b722e88613836fdc01d415
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 
