@@ -10,6 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema[7.0].define(version: 2022_10_21_020730) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "stock_takes", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "quantity_damaged"
+    t.integer "checked_in"
+    t.integer "checked_out"
 
 ActiveRecord::Schema[7.0].define(version: 2022_10_20_124710) do
 
