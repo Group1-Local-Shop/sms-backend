@@ -29,6 +29,21 @@ rescue_from ActiveRecord::RecordInvalid, with: :invalid_record_error
         head :no_content
     end
 
+    def stock
+        stock = []
+        stock << stock_take
+    end
+
+    def damaged_items
+        total = stock.sum{|stock_take| stock_take.quantity_damaged}
+        render json: total
+    end
+
+    def stock_quantity
+        total = stock.sum{|stock_take| stock_take.checked_in}
+        render json: total
+    end
+
     private
     def find_stock_take
         stock_take = StockTake.find(params[:id])
