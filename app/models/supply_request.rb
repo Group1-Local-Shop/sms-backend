@@ -1,0 +1,2 @@
+class SupplyRequest < ApplicationRecord
+end
