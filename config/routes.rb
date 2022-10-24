@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :stores
   resources :supply_requests
+  resources :stores
   resources :registration_links
   devise_for :merchants, path:"",path_names:{
     sign_in: "merchant_login",
