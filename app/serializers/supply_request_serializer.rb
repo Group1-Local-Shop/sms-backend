@@ -1,3 +1,3 @@
 class SupplyRequestSerializer < ActiveModel::Serializer
-  attributes :id, :status_type
+  attributes :id, :request_status
 end
