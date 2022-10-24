@@ -1,0 +1,2 @@
+class SupplyRequestsController < ApplicationController
+end
