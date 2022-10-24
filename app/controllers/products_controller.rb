@@ -28,6 +28,16 @@ class ProductsController < ApplicationController
     head :no_head
   end
 
+  def no_of_spoiled_items
+    total = @stock_array.sum{|product| product.no_of_spoiled_item}
+    render json: total
+end
+
+def no_of_items_in_stock
+    total = @stock_array.sum{|product| product.no_of_received_item}
+    render json: total
+end
+
   private 
 
   def product_params
