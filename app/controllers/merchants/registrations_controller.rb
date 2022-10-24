@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
-  
-   respond_to :json
+class Merchants::RegistrationsController < Devise::RegistrationsController
+   before_action :authenticate_merchant!
+    before_action :configure_permitted_parameters, if: :devise_controller?
+  # before_action :configure_account_update_params, only: [:update]
+    respond_to :json
    private
    def respond_with(resource, options={})
     if resource.persisted?
       render json: {
         status: {code: 200, message: 'Signed up sucessfully.'},
-        data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
+        data: MerchantSerializer.new(resource).serializable_hash[:data][:attributes]
       }
     else
       render json: {
@@ -16,7 +18,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       }, status: :unprocessable_entity
     end
   end
-   
+  private
+ def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys:[:email,:password])
+  end
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 

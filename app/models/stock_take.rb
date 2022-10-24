@@ -1,2 +1,0 @@
-class StockTake < ApplicationRecord
-end
