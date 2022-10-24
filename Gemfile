@@ -51,6 +51,6 @@ end
 
 
 gem "active_model_serializers", "~> 0.10.13"
+gem 'fast_jsonapi'
 gem 'devise'
 gem 'devise-jwt'
-gem 'fast_jsonapi'

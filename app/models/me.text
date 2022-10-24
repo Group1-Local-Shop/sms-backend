@@ -24,7 +24,7 @@ admin table
 4.username
 5.phone_number
 6.registration_link_id  one_to_one
-has many clarks
+has many clerks
 has_many_supply_request
 has_many store
 
