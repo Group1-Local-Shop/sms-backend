@@ -1,5 +1,5 @@
 class SupplyRequestsController < ApplicationController
-  before_action :set_supply_request, only: %i[ show update destroy ]
+     before_action :set_supply_request, only: %i[ show update destroy ]
 
   # GET /supply_requests
   def index

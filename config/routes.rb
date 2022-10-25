@@ -2,43 +2,24 @@ Rails.application.routes.draw do
   resources :supply_requests
   resources :stores
   resources :registration_links
-  devise_for :merchants, path:"",path_names:{
-    sign_in: "merchant_login",
-    sign_out: "merchant_logout",
-    registration: "merchant_signup"
-  },
-  controllers:{
-    sessions: 'merchants/sessions',
-    registrations: 'merchants/registrations'
-  }
-  devise_for :admins, path:"", path_names:{
-    sign_in: "admin_login",
-    sign_out: "admin_logout",
-    registration: "admin_signup"
-  },
-  controllers:{
-    sessions: 'admins/sessions',
-    registrations: 'admins/registrations'
-  }
+  namespace :api do
+    namespace :v1 do
+      resources :clerks, only: [:create]
+     
+      get '/profile', to: 'clerks#profile'
+    
+       post '/login', to: 'auth#create'
+       
+    end
+    
+  end
+  resources :merchants
+  resources :auths
+  resources :admins
+  resources :authentics
+  resources :products
 
-  get 'private/test'
-  devise_for :users,path:"",path_names: {
-    sign_in: 'login',
-    sign_out: 'logout',
-    registration: 'signup'
-  },
-   controllers:{
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
-  }
-
-   resources :users
-  
-
- 
-
-
-
+  post '/login', to: 'auths#create'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
 

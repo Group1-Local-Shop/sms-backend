@@ -1,4 +1,4 @@
 class AdminSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :id, :email, :created_at
+  attributes 
 end
