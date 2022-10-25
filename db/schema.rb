@@ -10,15 +10,73 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_063518) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema[7.0].define(version: 2022_10_24_203602) do
+  create_table "admins", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password_digest"
+    t.string "username"
+    t.integer "phone_no"
+    t.integer "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clerks", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "merchants", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password_digest"
+    t.string "username"
+    t.integer "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "payment_status"
+    t.integer "no_of_received_item"
+    t.integer "no_of_product_in_stock"
+    t.integer "buying_price"
+    t.integer "selling_price"
+    t.string "no_of_spoiled_item"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
+  create_table "registration_links", force: :cascade do |t|
+    t.string "registration_link"
+    t.date "expiry_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "stores", force: :cascade do |t|
-    t.integer "stores_id"
+    t.string "name"
+    t.integer "merchant_id"
+    t.integer "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "supply_requests", force: :cascade do |t|
     t.integer "product_id"
-    t.integer "product_quantity"
-    t.integer "sales"
+    t.integer "admin_id"
+    t.integer "clerk_id"
+    t.string "request_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
