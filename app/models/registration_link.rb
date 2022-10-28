@@ -1,0 +1,2 @@
+class RegistrationLink < ApplicationRecord
+end

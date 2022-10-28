@@ -1,0 +1,71 @@
+merchant table
+admin table
+clark table
+registrations_link table
+has_many store
+
+store
+product table
+supply_request table
+
+
+merchant table 
+1.name
+2.email
+3.password
+4.username
+has registration_link
+
+
+admin table 
+1.name
+2.email
+3.password
+4.username
+5.phone_number
+6.registration_link_id  one_to_one
+has many clarks
+has_many_supply_request
+has_many store
+
+clerk table
+1.name
+2.email
+3.password
+4.username
+5.admin_id
+belongs_to admin
+has_many_product
+has_many_supply_request
+
+registrations_link table
+merchant_id belongs to merchant 
+registration_link
+expiry_date
+
+product
+1.pay_status 
+2.no_of_received_item
+3.product_in_stock
+4.bp
+5.sp
+spoiled_item
+7.clark_id
+blongs_to clark
+has_many_supply_request
+
+supply_request table
+1.status default:pending
+2.Product_id
+3.admin_id
+4.clark_id
+belongs_to clark
+belongs_to admin
+belongs_to_products
+
+store table
+merchant_id
+admin_id
+name
+belongs_to merchant
+belongs_to admin
