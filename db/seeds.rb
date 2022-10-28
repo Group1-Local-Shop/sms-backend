@@ -22,7 +22,13 @@ stores.create!([
     image: "",
     stores_id: "Mombasa",
     address: "1559 Malindi Lane, Down Town, Nyali"
+  },
+  {
+    image: "",
+    stores_id: "Eldoret",
+    address: "13 Mountain Mall, Kipchoge Drv, Town Center"
   }
+
 ])
 
 
