@@ -95,6 +95,14 @@ product.create!([
   }
 ])
 
+Store.all.each do |store|
+  rand(1..4).times do
+
+    # get a random product
+    product = Product.find(Product.pluck(:id).sample)
+
+    StoreProduct.create!(store_id: store.id, product_id: product.id, price: rand(5..25))
+  end
+end
 
 puts "End Seeding...."
-
