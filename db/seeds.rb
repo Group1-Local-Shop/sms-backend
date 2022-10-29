@@ -9,7 +9,7 @@
 puts "Start Seeding ..."
 stores.create!([
   {
-    image: "https://images.unsplash.com/photo-1566897819059-db42e135fa69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2669&q=80",
+    image: "https://images.unsplash.com/photo-1631856955350-77f4023dff2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fHRvb2xzJTIwc3RvcmV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
     stores_id: "Nairobi",
     address: "1234 Westview Bldg, Fedha Road, Westlands"
   },
