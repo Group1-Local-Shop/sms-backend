@@ -9,22 +9,22 @@
 puts "Start Seeding ..."
 stores.create!([
   {
-    image: "",
+    image: "https://images.unsplash.com/photo-1566897819059-db42e135fa69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2669&q=80",
     stores_id: "Nairobi",
     address: "1234 Westview Bldg, Fedha Road, Westlands"
   },
   {
-    image: "",
+    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2304&q=80",
     stores_id: "Kisumu",
     address: "467 Mountain Mall, Main Street, Milimani"
   },
   {
-    image: "",
+    image: "https://images.unsplash.com/photo-1631856956771-bd96b2bd71f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjZ8fHRvb2xzJTIwc3RvcmV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
     stores_id: "Mombasa",
     address: "1559 Malindi Lane, Down Town, Nyali"
   },
   {
-    image: "",
+    image: "https://images.unsplash.com/photo-1601598838108-5019bf3ea4a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
     stores_id: "Eldoret",
     address: "13 Mountain Mall, Kipchoge Drv, Town Center"
   }
