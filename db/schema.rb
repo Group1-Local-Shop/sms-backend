@@ -15,10 +15,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_063518) do
   enable_extension "plpgsql"
 
   create_table "stores", force: :cascade do |t|
+    t.string "image"
     t.integer "stores_id"
     t.integer "product_id"
     t.integer "product_quantity"
     t.integer "sales"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

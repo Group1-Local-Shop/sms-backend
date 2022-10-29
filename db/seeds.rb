@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Start Seeding ..."
-stores.create!([
+Store.create!([
   {
     image: "https://images.unsplash.com/photo-1631856955350-77f4023dff2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fHRvb2xzJTIwc3RvcmV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
     stores_id: "Nairobi",
@@ -101,7 +101,7 @@ Store.all.each do |store|
     # get a random product
     product = Product.find(Product.pluck(:id).sample)
 
-    StoreProduct.create!(store_id: store.id, product_id: product.id, price: rand(100..250))
+    Store.create!(store_id: store.id, product_id: product.id, image: image, price: rand(100..250))
   end
 end
 
