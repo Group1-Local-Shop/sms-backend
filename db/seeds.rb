@@ -101,7 +101,7 @@ Store.all.each do |store|
     # get a random product
     product = Product.find(Product.pluck(:id).sample)
 
-    StoreProduct.create!(store_id: store.id, product_id: product.id, price: rand(5..25))
+    StoreProduct.create!(store_id: store.id, product_id: product.id, price: rand(100..250))
   end
 end
 
