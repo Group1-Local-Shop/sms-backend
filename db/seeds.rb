@@ -31,8 +31,7 @@ Store.create!([
 
 ])
 
-
-product.create!([
+Product.create!([
   {
     image: "https://images.unsplash.com/photo-1617571607645-dd7dd3bf7f6b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80",
     product_id: "Circular Saw",
@@ -97,9 +96,6 @@ product.create!([
 
 Store.all.each do |store|
   rand(1..4).times do
-
-    # get a random product
-    product = Product.find(Product.pluck(:id).sample)
 
     Store.create!(store_id: store.id, product_id: product.id, image: image, price: rand(100..250))
   end
